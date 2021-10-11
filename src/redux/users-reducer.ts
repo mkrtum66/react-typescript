@@ -78,7 +78,7 @@ type ActionTypes = InferActionsTypes<typeof actions>
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionTypes>
 
 export const requestUsers = (page: number, pageSize: number): ThunkType => {
-    return async (dispatch, getState) => {
+    return async (dispatch) => {
         dispatch(actions.toggleIsFetching(true));
         dispatch(actions.setCurrentPage(page));
 
