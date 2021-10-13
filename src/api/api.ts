@@ -1,5 +1,5 @@
 import axios from "axios";
-import {UserType} from "../types/types";
+import {UserType} from '../types/types';
 
 export const instance = axios.create({
     withCredentials: true,
@@ -9,12 +9,12 @@ export const instance = axios.create({
     }
 });
 
-
-export enum ResultCodeEnum {
+export enum ResultCodesEnum {
     Success = 0,
     Error = 1
 }
-export enum ResultForCaptcha {
+
+export enum ResultCodeForCapcthaEnum {
     CaptchaIsRequired = 10
 }
 
@@ -23,12 +23,8 @@ export type GetItemsType = {
     totalCount: number
     error: string | null
 }
-export type APIResponseType<D={}, RC=ResultCodeEnum> = {
+export type APIResponseType<D = {}, RC = ResultCodesEnum> = {
     data: D
     messages: Array<string>
     resultCode: RC
 }
-
-
-
-
